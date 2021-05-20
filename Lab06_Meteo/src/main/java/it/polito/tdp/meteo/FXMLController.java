@@ -56,8 +56,9 @@ public class FXMLController {
     }
     
     public void setChoiceBox() {
-    	for(int i=1; i<=12;i++)
-        	boxMese.getItems().add(i);
+    	for(int mese=1; mese<=12;mese++) {
+        	boxMese.getItems().add(mese);
+    	}
     }
     
     public void setModel(Model model) {
