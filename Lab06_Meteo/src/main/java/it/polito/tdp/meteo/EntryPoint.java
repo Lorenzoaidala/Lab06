@@ -2,6 +2,8 @@ package it.polito.tdp.meteo;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+
+import it.polito.tdp.meteo.model.Model;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,6 +23,8 @@ public class EntryPoint extends Application {
         Scene scene = new Scene(root);
 
         controller = loader.getController();
+        Model model = new Model();
+        controller.setModel(model);
     	
         // TODO impostare il model nel controller        
         
