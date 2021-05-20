@@ -54,9 +54,15 @@ public class FXMLController {
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Scene.fxml'.";
 
     }
+    
+    public void setChoiceBox() {
+    	for(int i=1; i<=12;i++)
+        	boxMese.getItems().add(i);
+    }
+    
     public void setModel(Model model) {
     	this.model = model;
-    	boxMese.setValue();
+    	
     }
 }
 
