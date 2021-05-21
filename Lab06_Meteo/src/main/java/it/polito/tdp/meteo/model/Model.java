@@ -50,17 +50,17 @@ public class Model {
 
 			if(best==null || costo<calcolaCosto(best)) {
 				best = new ArrayList<Citta>(parziale);
-			} else {
-				for(Citta prova : leCitta) {
-					if(aggiuntaValida(parziale,prova)) {
-						parziale.add(prova);
-						cerca(parziale, livello+1);
-						parziale.remove(parziale.size()-1);
-					}
+			}
+		}else {
+			for(Citta prova : leCitta) {
+				if(aggiuntaValida(parziale,prova)) {
+					parziale.add(prova);
+					cerca(parziale, livello+1);
+					parziale.remove(parziale.size()-1);
 				}
 			}
-		}
 
+		}
 
 	}
 
@@ -75,7 +75,7 @@ public class Model {
 		if(cont>=NUMERO_GIORNI_CITTA_MAX)
 			return false;
 		if(parziale.size()==0)
-		return true;
+			return true;
 		if(parziale.size()==1 || parziale.size()==2) {
 			return parziale.get(parziale.size()-1).equals(prova);
 		}
@@ -83,7 +83,7 @@ public class Model {
 			return true;
 		if(parziale.get(parziale.size()-1).equals(parziale.get(parziale.size()-2)) && parziale.get(parziale.size()-2).equals(parziale.get(parziale.size()-3)))
 			return true;
-		
+
 		return false;
 	}
 
